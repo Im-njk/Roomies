@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:padding="20dp"
+    tools:context=".Activity.addAmtActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Amount"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <EditText
+        android:id="@+id/tot_amt_xml"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittextbg"
+        android:layout_marginTop="10dp"
+        android:textCursorDrawable="@drawable/cursor"
+        android:textAlignment="center"
+        android:fontFamily="@font/nexa"
+        android:inputType="number"
+        android:gravity="center"
+        android:textColor="@color/yellow"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <EditText
+        android:id="@+id/description_xml"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittextbg"
+        android:layout_marginTop="10dp"
+        android:textCursorDrawable="@drawable/cursor"
+        android:textAlignment="center"
+        android:fontFamily="@font/nexa"
+        android:gravity="center"
+        android:textColor="@color/yellow"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Roommates"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_add_amt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="100dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:text="Add Amount"
+            android:backgroundTint="@color/yellow"/>
+    </RelativeLayout>
+
+</LinearLayout>

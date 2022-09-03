@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/add_amt_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_margin="10dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="10dp"
+    android:paddingHorizontal="15dp"
+    android:background="@drawable/add_amt_unselected">
+    <TextView
+        android:id="@+id/name_add_amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="YOU"
+        android:fontFamily="@font/nexa"
+        />
+
+    <TextView
+        android:id="@+id/amount_add_amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/nexa"
+        android:text="RS. 0"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+</RelativeLayout>

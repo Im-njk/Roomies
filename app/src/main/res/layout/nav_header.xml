@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:paddingLeft="20dp"
+    android:background="#F2CFCFCF">
+
+    <ImageView
+        android:id="@+id/user_img"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/user_img"
+        android:layout_centerVertical="true"
+        app:tint="@color/black" />
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Neeraj Kumawat"
+        android:textColor="@color/black"
+        android:layout_below="@+id/user_img"
+        android:layout_marginTop="10dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/nexa"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Room Id : 17882"
+            android:fontFamily="@font/nexa"
+            android:layout_below="@id/user_name"/>
+</RelativeLayout>
