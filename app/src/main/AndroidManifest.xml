@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Roomies">
-        <activity android:name=".Activity.historyActivity"></activity>
+        <activity
+            android:name=".Activity.selectRoomiesActivity"
+            android:exported="false" />
+        <activity android:name=".Activity.historyActivity" />
         <activity android:name=".Activity.addAmtActivity" />
         <activity android:name=".Activity.homeActivity" />
         <activity android:name=".Activity.LoginActivity" />

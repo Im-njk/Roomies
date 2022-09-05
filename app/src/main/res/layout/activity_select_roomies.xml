@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:padding="20dp"
+    tools:context=".Activity.selectRoomiesActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Amount"
+        android:layout_marginTop="30dp"
+        android:textSize="14dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/tot_amt_xml_select_roomies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs. 0"
+        android:textSize="30dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/des_xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DES"
+        android:layout_marginTop="40dp"
+        android:textSize="14dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#fff"
+    android:layout_marginBottom="5dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Roommates"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nexa"
+        android:textColor="@color/white"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_add_amt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="100dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Add Amount" />
+    </RelativeLayout>
+
+</LinearLayout>

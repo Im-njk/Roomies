@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,54 +22,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class addAmtActivity extends AppCompatActivity { 
-    
-    RecyclerView ad_amt_recycler;
-    List<roomateDetail> rommatedetail=new ArrayList<>();
-    Add_amt_recycler add_amt_recycler_class;
-    
-    EditText tot_amt;
+    Button next_btn;
+    EditText tot_amt , des;
     double total = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_amt);
-
-        roomateDetail r0=new roomateDetail("You",0);
-        roomateDetail r1=new roomateDetail("Lokesh",0);
-        roomateDetail r2=new roomateDetail("H...j",0);
-        roomateDetail r3=new roomateDetail("Kamal",0);
-        rommatedetail.add(r0);
-        rommatedetail.add(r1);
-        rommatedetail.add(r2);
-        rommatedetail.add(r3);
-
-        ad_amt_recycler =findViewById(R.id.recycler_add_amt);
-        ad_amt_recycler.setHasFixedSize(true);
-        ad_amt_recycler.setLayoutManager(new GridLayoutManager(this,1));
-        
+        next_btn = findViewById(R.id.nextBtn);
         tot_amt = findViewById(R.id.tot_amt_xml);
-        
-        tot_amt.addTextChangedListener(new TextWatcher() {
+        des = findViewById(R.id.description_xml);
+        next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                total = Double.parseDouble(editable.toString());
-                recycler();
+            public void onClick(View view) {
+                String descri = des.getText().toString();
+                if(descri.length() > 0){
+                    String tot_str = String.valueOf(tot_amt.getText());
+                    total = Double.valueOf(tot_str.length() == 0 ? "0.0" : tot_str);
+                    Intent yourIntent = new Intent(addAmtActivity.this, selectRoomiesActivity.class);
+                    Bundle b = new Bundle();
+                    b.putString("des",descri);
+                    b.putDouble("tot", total);
+                    yourIntent.putExtras(b);
+                    startActivity(yourIntent);
+                }
+                else
+                    Toast.makeText(addAmtActivity.this, "Fill out the Descriptiom", Toast.LENGTH_SHORT).show();
             }
         });
-        recycler();
     }
-    void recycler(){
-        add_amt_recycler_class=new Add_amt_recycler(this,rommatedetail,total);
-        ad_amt_recycler.setAdapter(add_amt_recycler_class);
-    }
+
 }

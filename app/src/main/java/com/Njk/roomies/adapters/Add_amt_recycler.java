@@ -21,9 +21,24 @@ public class Add_amt_recycler extends RecyclerView.Adapter<Add_amt_recycler.View
     Context context;
     List<roomateDetail> list;
     double tot_amt;
+    Add_amt_recycler add_amt_recycler_class;
+    RecyclerView ad_amt_recycler;
 
+
+    public Add_amt_recycler(Context context, List<roomateDetail> list, double tot_amt, Add_amt_recycler add_amt_recycler_class, RecyclerView ad_amt_recycler) {
+        this.context = context;
+        this.list = list;
+        this.tot_amt = tot_amt;
+        this.add_amt_recycler_class = add_amt_recycler_class;
+        this.ad_amt_recycler = ad_amt_recycler;
+    }
+
+    void recycler(){
+        add_amt_recycler_class=new Add_amt_recycler(context,list,tot_amt,add_amt_recycler_class,ad_amt_recycler);
+        ad_amt_recycler.setAdapter(add_amt_recycler_class);
+    }
     double set_share_amt(TextView amt) {
-        int cnt = 0;
+        int cnt = 1;
         for (roomateDetail obj : list) {
             if (obj.isStatus()) cnt++;
         }
@@ -32,6 +47,7 @@ public class Add_amt_recycler extends RecyclerView.Adapter<Add_amt_recycler.View
                 obj.setAmount(tot_amt / cnt);
             }
         }
+        recycler();
         return tot_amt / cnt;
     }
 
@@ -51,12 +67,6 @@ public class Add_amt_recycler extends RecyclerView.Adapter<Add_amt_recycler.View
         }
     }
 
-    public Add_amt_recycler(Context context, List<roomateDetail> list , double tot_amt) {
-        this.context = context;
-        this.list = list;
-        this.tot_amt = tot_amt;
-    }
-
     @NonNull
     @Override
     public Add_amt_recycler.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -66,26 +76,27 @@ public class Add_amt_recycler extends RecyclerView.Adapter<Add_amt_recycler.View
 
     @Override
     public void onBindViewHolder(@NonNull Add_amt_recycler.ViewHolder holder, int position) {
+        holder.name.setText(list.get(position).getName());
         if(list.get(position).isStatus()) {
             holder.r1.setBackgroundColor(context.getResources().getColor(R.color.yellow));
             holder.name.setTextColor(context.getResources().getColor(R.color.black));
             holder.amt.setTextColor(context.getResources().getColor(R.color.black));
+            holder.amt.setText("Rs. "+String.valueOf(list.get(position).getAmount()));
         }else{
             holder.r1.setBackgroundResource(R.drawable.add_amt_unselected);
             holder.name.setTextColor(context.getResources().getColor(R.color.white));
             holder.amt.setTextColor(context.getResources().getColor(R.color.white));
+            holder.amt.setText("Rs. 0");
         }
 
-        holder.name.setText(list.get(position).getName());
-        holder.amt.setText("Rs. 0");
+
+
         holder.r1.setOnClickListener(new DoubleClickListener() {
             @Override
             public void onSingleClick(View v) {
 
                 changeclr(list.get(position), holder.r1, holder.name, holder.amt);
                 set_share_amt(holder.amt);
-
-
             }
 
             @Override

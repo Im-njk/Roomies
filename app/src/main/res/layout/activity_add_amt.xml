@@ -6,69 +6,68 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/black"
-    android:padding="20dp"
+    android:padding="40dp"
     tools:context=".Activity.addAmtActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter Your Amount"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/nexa"
-        android:textColor="@color/white"/>
-    <EditText
-        android:id="@+id/tot_amt_xml"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/edittextbg"
-        android:layout_marginTop="10dp"
-        android:textCursorDrawable="@drawable/cursor"
-        android:textAlignment="center"
-        android:fontFamily="@font/nexa"
-        android:inputType="number"
-        android:gravity="center"
-        android:textColor="@color/yellow"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/nexa"
-        android:textColor="@color/white"/>
-    <EditText
-        android:id="@+id/description_xml"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/edittextbg"
-        android:layout_marginTop="10dp"
-        android:textCursorDrawable="@drawable/cursor"
-        android:textAlignment="center"
-        android:fontFamily="@font/nexa"
-        android:gravity="center"
-        android:textColor="@color/yellow"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Roommates"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/nexa"
-        android:textColor="@color/white"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_add_amt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Button
-            android:id="@+id/addBtn"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="100dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Add Amount"
-            android:backgroundTint="@color/yellow"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nexa"
+                android:text="Enter Your Amount"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/tot_amt_xml"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittextbg"
+                android:fontFamily="@font/nexa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/yellow"
+                android:textCursorDrawable="@drawable/cursor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nexa"
+                android:text="Description"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/description_xml"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittextbg"
+                android:fontFamily="@font/nexa"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/yellow"
+                android:textCursorDrawable="@drawable/cursor" />
+
+            <Button
+                android:id="@+id/nextBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="60dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Next" />
+        </LinearLayout>
     </RelativeLayout>
 
 </LinearLayout>
